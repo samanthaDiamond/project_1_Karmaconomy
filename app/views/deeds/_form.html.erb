@@ -1,0 +1,38 @@
+<%= form_for @deed do |f| %>
+  <fieldset>
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+  </fieldset>
+
+  <fieldset>
+    <%= f.label :description %>
+    <%= f.text_field :description %>
+  </fieldset>
+
+  <fieldset>
+    <%= f.label :postcode %>
+    <%= f.number_field :postcode %>
+  </fieldset>
+
+  <fieldset>
+    <%= f.label :date %>
+    <%= f.text_field :date %>
+  </fieldset>
+
+  <fieldset>
+    <%= f.label :image %>
+    <%= f.url_field :image %>
+  </fieldset>
+
+  <fieldset>
+    <%= f.label :karma %>
+    <%= f.number_field :karma %>
+  </fieldset>
+
+  <fieldset>
+    <%= f.label :deed_type %>
+    <%= f.text_field :deed_type %>
+  </fieldset>
+
+  <%= f.submit %>
+<% end %>

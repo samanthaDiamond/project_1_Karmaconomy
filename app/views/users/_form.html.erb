@@ -1,0 +1,33 @@
+<%= form_for @user do |f| %>
+  <fieldset>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </fieldset>
+
+  <fieldset>
+    <%= f.label :username %>
+    <%= f.text_field :username %>
+  </fieldset>
+
+  <fieldset>
+    <%= f.label :postcode %>
+    <%= f.number_field :postcode %>
+  </fieldset>
+
+  <fieldset>
+    <%= f.label :biography %>
+    <%= f.text_field :biography %>
+  </fieldset>
+
+  <fieldset>
+    <%= f.label :image %>
+    <%= f.url_field :image %>
+  </fieldset>
+
+  <fieldset>
+    <%= f.label :karma %>
+    <%= f.number_field :karma %>
+  </fieldset>
+
+  <%= f.submit %>
+<% end %>

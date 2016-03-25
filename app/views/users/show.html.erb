@@ -1,0 +1,11 @@
+<h1><%= @user.name %></h1>
+
+<li><%= image_tag(@user.image, :class => 'feature') %></li>
+  <ul>
+    <li><%= @user.postcode %></li>
+    <li><%= @user.biography %></li>
+    <li><%= @user.karma %></li>
+  </ul>
+
+<%= link_to 'Edit profile', edit_user_path(@user) %>
+<%= link_to 'Delete profile', @user, :method => :delete %>

@@ -1,0 +1,3 @@
+<% @deeds.each do |deed| %>
+  <li><%= link_to(deed.title, deed_path(deed)) %></li>
+<% end %>

@@ -1,0 +1,13 @@
+<h1><%= @deed.title %></h1>
+
+<li><%= image_tag(@deed.image, :class => 'feature') %></li>
+  <ul>
+    <li><%= @deed.description %></li>
+    <li><%= @deed.postcode %></li>
+    <li><%= @deed.date %></li>
+    <li><%= @deed.karma %></li>
+    <li><%= @deed.deed_type %></li>
+  </ul>
+
+<%= link_to 'Edit deed', edit_deed_path(@deed) %>
+<%= link_to 'Delete deed', @deed, :method => :delete %>
