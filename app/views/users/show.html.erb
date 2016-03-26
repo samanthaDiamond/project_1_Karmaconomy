@@ -1,10 +1,12 @@
-<h1><%= @user.name %></h1>
+<h1><%= @user.username %></h1>
 
 <li><%= image_tag(@user.image, :class => 'feature') %></li>
   <ul>
-    <li><%= @user.postcode %></li>
-    <li><%= @user.biography %></li>
-    <li><%= @user.karma %></li>
+    <li>Name: <%= @user.name %></li>
+    <li>Biography: <%= @user.biography %></li>
+    <li>Postcode: <%= @user.postcode %></li>
+    <li>Email: <%= @user.email %></li>
+    <li>Karma: <%= @user.karma %></li>
   </ul>
 
 <%= link_to 'Edit profile', edit_user_path(@user) %>

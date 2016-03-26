@@ -1,0 +1,58 @@
+_form Joel
+
+<% if @user.errors.any? %>
+<ol>
+  <% @user.errors.full_messages.each do |msg| %>
+    <li><%= msg %></li>
+    <% end %>
+</ol>
+<% end %>
+
+<%= form_for @user do |f| %>
+  <fieldset>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </fieldset>
+
+  <fieldset>
+    <%= f.label :username %>
+    <%= f.text_field :username %>
+  </fieldset>
+
+  <fieldset>
+    <%= f.label :postcode %>
+    <%= f.number_field :postcode %>
+  </fieldset>
+
+  <fieldset>
+    <%= f.label :biography %>
+    <%= f.text_field :biography %>
+  </fieldset>
+
+  <fieldset>
+    <%= f.label :image %>
+    <%= f.url_field :image %>
+  </fieldset>
+
+  <fieldset>
+    <%= f.label :karma %>
+    <%= f.number_field :karma %>
+  </fieldset>
+
+  <fieldset>
+    <%= f.label :email %>
+    <%= f.email_field :email %>
+  </fieldset>
+
+  <fieldset>
+    <%= f.label :password %>
+    <%= f.password_field :password %>
+  </fieldset>
+
+  <fieldset>
+    <%= f.label :password_confirmation, "Confirmation" %>
+    <%= f.password_field :password_confirmation %>
+  </fieldset>
+
+  <%= f.submit %>
+<% end %>

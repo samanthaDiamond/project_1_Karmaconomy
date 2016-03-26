@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html>
 <head>
   <title>Project1Karmaconomy</title>
@@ -10,13 +10,61 @@
 
   <nav>
    <%= link_to 'Home', '/' %>
-   <%= link_to 'Sign up', new_user_path %>
-   <%= link_to 'Profile', users_path %>
+   <%= link_to 'Sign up', signup_path %>
+   <%= link_to 'Profile', root_path %>
    <%= link_to 'New Deed', new_deed_path %>
    <%= link_to 'All Deeds', deeds_path %>
+   <%= link_to 'Login', login_path %>
  </nav>
 
 <%= yield %>
 
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Tutorial</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <header class="navbar navbar-fixed-top navbar-inverse">
+    <div class="container">
+      <nav>
+       <ul class="nav navbar-nav navbar-right">
+         <li><%= link_to "Home", root_path %></li>
+         <li><%= link_to 'New Deed', new_deed_path %></li>
+         <li><%= link_to 'All Deeds', deeds_path %></li>
+         <% if logged_in? %>
+           <li><%= link_to "Users", '#' %></li>
+           <li class="dropdown">
+             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+               Account <b class="caret"></b>
+             </a>
+             <ul class="dropdown-menu">
+               <li><%= link_to "Profile", current_user %></li>
+               <li><%= link_to "Settings", '#' %></li>
+               <li class="divider"></li>
+               <li>
+                 <%= link_to "Log out", logout_path, method: "delete" %>
+               </li>
+             </ul>
+           </li>
+         <% else %>
+           <li><%= link_to "Login", login_path %></li>
+         <% end %>
+       </ul>
+     </nav>
+   </div>
+</header>
+
+<% flash.each do |message_type, message| %>
+  <div class="alert alert-<%= message_type %>"><%= message %></div>
+<% end %>
+
+<%= yield %>
 </body>
 </html>

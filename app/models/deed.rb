@@ -7,11 +7,11 @@
 #  description :text
 #  date        :text
 #  image       :text
-#  karma       :text
 #  deed_type   :text
 #  postcode    :integer
 #  created_at  :datetime
 #  updated_at  :datetime
+#  karma       :integer
 #
 
 class Deed < ActiveRecord::Base

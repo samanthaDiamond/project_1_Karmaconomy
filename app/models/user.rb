@@ -11,9 +11,29 @@
 #  karma      :integer
 #  created_at :datetime
 #  updated_at :datetime
+#  email      :text
 #
 
 class User < ActiveRecord::Base
   has_many :orders
   has_many :deeds, through: :orders
+
+  validates :name, presence: true, length: { minimum: 4 }
+
+  validates :username, presence: true, length: { maximum: 30}, :uniqueness => true
+
+  validates :postcode, presence: true, length: { is: 4 }
+
+  validates :biography, presence: true, length: { maximum: 500 }
+
+  # validates :image   ???
+
+  before_save { self.email = email.downcase }
+  VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
+  validates :email, presence: true, length: { maximum: 255 }, format: { with: VALID_EMAIL_REGEX }, uniqueness: { case_sensitive: false }
+  has_secure_password
+  validates :password, presence: true, length: { minimum: 6 }
+
+  # RUBY GUIDE - refer to ruby guide for more info
+
 end

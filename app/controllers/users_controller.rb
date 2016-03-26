@@ -1,15 +1,22 @@
 class UsersController < ApplicationController
-  def index
-    @user = User.first
-  end
-
   def new
     @user = User.new
   end
 
+  def show
+    @user = User.find(params[:id])
+  end
+
   def create
-    user = User.create user_params
-    redirect_to user
+    @user = User.new(user_params)
+    @user.karma = 10
+    if @user.save
+      log_in @user
+      flash.now[:success] = "Welcome to Karmaconomy"
+      redirect_to @user
+    else
+      render 'new'
+    end
   end
 
   def edit
@@ -22,10 +29,6 @@ class UsersController < ApplicationController
     redirect_to user
   end
 
-  def show
-    @user = User.find params[:id]
-  end
-
   def destroy
     user = User.find params[:id]
     user.destroy
@@ -34,6 +37,7 @@ class UsersController < ApplicationController
 
   private
   def user_params
-    params.require(:user).permit(:name, :username, :postcode, :biography, :image, :karma)
+    params.require(:user).permit(:name, :username, :postcode, :biography, :image, :email, :password,
+    :password_confirmation)
   end
 end
