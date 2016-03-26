@@ -1,3 +1,7 @@
+<h2>DEEDS</h2>
 <% @deeds.each do |deed| %>
-  <li><%= link_to(deed.title, deed_path(deed)) %></li>
+  <hr />
+  <%= link_to(deed.title, deed_path(deed)) %>
+  <p><%= deed.postcode %></p>
+  <p><%= deed.description %></p>
 <% end %>

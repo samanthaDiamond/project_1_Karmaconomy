@@ -3,3 +3,5 @@ User.destroy_all
 
 Deed.destroy_all
 # Deed.create(:title => 'Borrow tent', :description => '2 man tent, in good condition', :postcode => 2060, :date => 'any date')
+
+Order.destroy_all

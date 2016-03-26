@@ -11,3 +11,17 @@
 
 <%= link_to 'Edit profile', edit_user_path(@user) %>
 <%= link_to 'Delete profile', @user, :method => :delete %>
+
+<h2>Deeds</h2>
+
+<% user = User.find_by(id: current_user.id) %>
+<% Order.all.each do |order| %>
+  <% if order.user_id == user.id %>
+    <% deed = Deed.find_by(id: order.deed_id) %>
+    <h3><%= link_to(deed.title, deed_path(deed)) %></h3>
+    <p><%= deed.description%></p>
+    <%= link_to 'Edit deed', edit_deed_path(deed) %>
+    <%= link_to 'Delete deed', deed, :method => :delete %>
+    <p>------------------</p>
+  <% end %>
+<% end %>
