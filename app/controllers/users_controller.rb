@@ -1,10 +1,10 @@
 class UsersController < ApplicationController
-  def new
-    @user = User.new
-  end
-
   def show
     @user = User.find(params[:id])
+  end
+
+  def new
+    @user = User.new
   end
 
   def create
@@ -24,9 +24,13 @@ class UsersController < ApplicationController
   end
 
   def update
-    user = User.find params[:id]
-    user.update user_params
-    redirect_to user
+     @user = User.find(params[:id])
+     if @user.update_attributes(user_params)
+       flash.now[:success] = "Profile updated"
+       redirect_to @user
+     else
+       render 'edit'
+     end
   end
 
   def destroy

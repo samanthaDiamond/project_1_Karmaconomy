@@ -4,11 +4,16 @@ class DeedsController < ApplicationController
   end
 
   def new
-    @deed = Deed.new
+    if logged_in?
+      @deed = Deed.new
+    else
+      redirect_to :controller => 'sessions', :action => 'new'
+    end
   end
 
   def create
     deed = Deed.create deed_params
+    Order.create(deed_id: deed.id, user_id: current_user.id, karma: deed.karma)
     redirect_to deed
   end
 
