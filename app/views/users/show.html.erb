@@ -10,7 +10,11 @@
   </ul>
 
 <%= link_to 'Edit profile', edit_user_path(@user) %>
-<%= link_to 'Delete profile', @user, :method => :delete %>
+| <%= link_to 'Delete profile', @user, :method => :delete %>
+
+<% if current_user.admin? && current_user.present? %>
+  | <%= link_to 'All users', users_path %>
+<% end %>
 
 <h2>Deeds</h2>
 
