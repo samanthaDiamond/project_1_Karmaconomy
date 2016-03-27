@@ -22,6 +22,16 @@ class Deed < ActiveRecord::Base
 
   validates :postcode, presence: true, length: { is: 4 }
 
+  validates :description, presence: true, length: { maximum: 500}
+
+  validates :date, length: { maximum: 100 }
+
+  # validates :image
+
+  # validates :deed_type, presence: true
+
+  validates :karma, presence: true
+
 
 
 end

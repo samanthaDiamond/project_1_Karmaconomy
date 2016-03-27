@@ -29,35 +29,45 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width = device-width, initial-scale = 1">
+  <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 </head>
 <body>
   <header class="navbar navbar-fixed-top navbar-inverse">
-    <div class="container">
-      <nav>
-       <ul class="nav navbar-nav navbar-right">
-         <li><%= link_to "Home", root_path %></li>
-         <li><%= link_to 'All Deeds', deeds_path %></li>
-         <% if logged_in? %>
-           <li><%= link_to 'New Deed', new_deed_path %></li>
-           <li class="dropdown">
-             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-               Account <b class="caret"></b>
-             </a>
-             <ul class="dropdown-menu">
-               <li><%= link_to "Profile", current_user %></li>
-               <li><%= link_to "Settings", edit_user_path(current_user) %></li>               <li class="divider"></li>
-               <li class="divider"></li>
-               <li>
-                 <%= link_to "Log out", logout_path, method: "delete" %>
+    <!-- <div class="container">
+      <div class="page-header">
+        <h1>Karmaconomy</h1>
+        <div class="jumbotron"> -->
+          <nav>
+           <ul class="nav navbar-nav navbar-right">
+             <li><%= link_to "Home", root_path %></li>
+             <li><%= link_to 'All Deeds', deeds_path %></li>
+             <% if logged_in? %>
+               <li><%= link_to 'New Deed', new_deed_path %></li>
+               <li class="dropdown">
+                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                   Account <b class="caret"></b>
+                 </a>
+                 <ul class="dropdown-menu">
+                   <li><%= link_to "Profile", current_user %></li>
+                   <li><%= link_to "Settings", edit_user_path(current_user) %></li>               <li class="divider"></li>
+                   <li class="divider"></li>
+                   <li>
+                     <%= link_to "Log out", logout_path, method: "delete" %>
+                   </li>
+                 </ul>
                </li>
-             </ul>
-           </li>
-         <% else %>
-           <li><%= link_to "Login", login_path %></li>
-         <% end %>
-       </ul>
-     </nav>
-   </div>
+             <% else %>
+               <li><%= link_to "Login", login_path %></li>
+             <% end %>
+           </ul>
+         </nav>
+       <!-- </div>
+     </div>
+   </div> -->
 </header>
 
 <% flash.each do |message_type, message| %>
