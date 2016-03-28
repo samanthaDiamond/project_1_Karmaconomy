@@ -8,20 +8,6 @@
   <title>Karmaconomy</title>
 </head>
 <body>
-  <!-- <nav class="fixed">
-    <% if logged_in? %>
-      <%= link_to "HOME", root_path %>
-      <%= link_to "PROFILE", current_user %>
-      <%= link_to "ALL DEEDS", deeds_path %>
-      <%= link_to "NEW DEED", new_deed_path %>
-      <%= link_to "LOG OUT", logout_path, method: "delete" %>
-    <% else %>
-      <%= link_to "HOME", root_path %>
-      <%= link_to "DEEDS", deeds_path %>
-      <%= link_to "LOGIN", login_path %>
-      <%= link_to "SIGN UP!", signup_path %>
-    <% end %>
-  </nav> -->
 
 <% flash.each do |message_type, message| %>
   <div class="alert alert-<%= message_type %>"><%= message %></div>

@@ -1,34 +1,40 @@
-<nav class="fixed">
-  <% if logged_in? %>
-    <%= link_to "HOME", root_path %>
-    <%= link_to "PROFILE", current_user %>
-    <%= link_to "ALL DEEDS", deeds_path %>
-    <%= link_to "NEW DEED", new_deed_path %>
-    <%= link_to "LOG OUT", logout_path, method: "delete" %>
-  <% else %>
-    <%= link_to "HOME", root_path %>
-    <%= link_to "DEEDS", deeds_path %>
-    <%= link_to "LOGIN", login_path %>
-    <%= link_to "SIGN UP!", signup_path %>
-  <% end %>
-</nav>
-
-<% provide(:title, "Login") %>
-<h1>Login</h1>
-
-<div class="row">
-  <div class="col-md-6 col-md-offset-3">
-    <%= form_for(:session, url: login_path) do |f| %>
-
-      <%= f.label :email %>
-      <%= f.email_field :email, class: 'form-control' %>
-
-      <%= f.label :password %>
-      <%= f.password_field :password, class: 'form-control' %>
-
-      <%= f.submit "Log in", class: "btn btn-primary" %>
+<div class="relative">
+  <div class="fixed top-0 left-0 right-0 p2">
+    <% if logged_in? %>
+      <%= link_to "HOME", root_path %>
+      <%= link_to "PROFILE", current_user %>
+      <%= link_to "ALL DEEDS", deeds_path %>
+      <%= link_to "NEW DEED", new_deed_path %>
+      <%= link_to "LOG OUT", logout_path, method: "delete" %>
+    <% else %>
+      <%= link_to "HOME", root_path %>
+      <%= link_to "DEEDS", deeds_path %>
+      <%= link_to "LOGIN", login_path %>
+      <%= link_to "SIGN UP!", signup_path %>
     <% end %>
+  </div>
+</div>
 
-    <p>New user? <%= link_to "Sign up now!", new_user_path %></p>
+<div class="login_container">
+  <div >
+      <h2 class="h1">Login</h2>
+  </div>
+  <div>
+    <div class="login_form">
+      <%= form_for(:session, url: login_path) do |f| %>
+        <%= f.label :email %>
+        <%= f.email_field :attr, placeholder: "Email" %>
+        <br />
+        <br />
+        <%= f.label :password %>
+        <%= f.password_field :attr, placeholder: "Password" %>
+        <br />
+        <br />
+        <%= f.submit "Log in", :class => 'btn'%>
+      <% end %>
+
+
+      <p>New user? <%= link_to "Sign up now!", new_user_path %></p>
+    </div>
   </div>
 </div>

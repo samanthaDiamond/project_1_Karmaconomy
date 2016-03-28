@@ -28,7 +28,7 @@ div.background {
   background-repeat: no-repeat;
 }
 
-.karmaconomy_heading {
+h1.karmaconomy_heading {
   margin-top: 130px;
   margin-bottom: 0;
   text-align: center;
@@ -61,7 +61,7 @@ div.sub_heading {
 }
 
 .nav_welcome>a:hover {
-  text-decoration: underline;
+  color: #FF8A7C;
 }
 
 
@@ -107,31 +107,73 @@ div.sub_heading {
 .box2 {
   background-image: url("tools_fix_it.jpg");
   background-size: cover;
+  opacity: 0.5;
+  transition: opacity 0.3s ease-in-out;
 }
+
+.box2:hover {
+  background-image: url("tools_fix_it.jpg");
+  background-size: cover;
+  opacity: 1;
+  transition: opacity 0.3s ease-in-out;
+}
+
 
 .box3 {
   background-image: url("camera_borrow_it.jpg");
   background-size: cover;
+  opacity: 0.5;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.box3:hover {
+  background-image: url("camera_borrow_it.jpg");
+  background-size: cover;
+  opacity: 1;
+  transition: opacity 0.3s ease-in-out;
 }
 
 .box4 {
   background-image: url("pool_use_it.jpg");
   background-size: cover;
+  opacity: 0.5;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.box4:hover {
+  background-image: url("pool_use_it.jpg");
+  background-size: cover;
+  opacity: 1;
+  transition: opacity 0.3s ease-in-out;
 }
 
 .box5 {
   background-image: url("walk_dog_do_it.jpg");
   background-size: cover;
+  opacity: 0.5;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.box5:hover {
+  background-image: url("walk_dog_do_it.jpg");
+  background-size: cover;
+  opacity: 1;
+  transition: opacity 0.3s ease-in-out;
 }
 
 .box6 {
   background-image: url("furniture_have_it.jpg");
   background-size: cover;
+  opacity: 0.5;
+  transition: opacity 0.3s ease-in-out;
 }
 
-
-
-
+.box6:hover {
+  background-image: url("furniture_have_it.jpg");
+  background-size: cover;
+  opacity: 1;
+  transition: opacity 0.3s ease-in-out;
+}
 
 
 // APPLICATIONS PAGES
@@ -151,62 +193,42 @@ div.sub_heading {
 // USER SHOW PAGE
 
 
-nav.fixed {
-  // background-color: rgba(37, 195, 142, 0.2);  - makes nav BG opaque
+.fixed {
+  background-color: rgba(37, 195, 142, 0.2);
   text-align: left;
   padding: 7px;
-  width: 100vw;
-  font-size: 25px;
+  font-size: 20px;
   font-family: 'Architects Daughter', cursive;
-  margin-bottom: 40px;
 }
 
-nav.fixed>a {
+.fixed>a {
   text-decoration: none;
   color: #374665;
   margin: 15px;
 }
 
-div>h1.user_name {
-
-
+div.login_container {
+  width: 960px;
+  text-align: center;
+  margin: 0 auto;
 }
 
+.h1 {
+  margin: 80px 0px 60px 0px;
+  font-family: 'Give You Glory', cursive;
+}
 
+.login_form {
+  font-family: 'Questrial', sans-serif;
+}
 
+.btn {
+  font-family: 'Questrial', sans-serif;
+  padding: 7px;
+  width: auto;
+  border: 2px solid #FF8A7C;
+}
 
-
-
-
-
-
-
-
-
-// div.container {
-//   width: 960px;
-//   margin: 0 auto;
-// }
-
-
-
-// nav.fixed {
-//   // background-color: rgba(37, 195, 142, 0.2);  - makes nav BG opaque
-//   text-align: left;
-//   margin-left: -100px;
-//   padding: 7px;
-//   margin-bottom: 100px;
-//   width: 100vw;
-// }
-//
-// .nav>a {
-//   margin-left: 25px;
-//   text-decoration: none;
-//   color: #374665;
-//   font-family: 'Architects Daughter', cursive;
-//   font-size: 20px;
-// }
-// .nav>a:hover {
-//   font-size: 25px;
-//   text-decoration: none;
-// }
+.btn:hover{
+  border: 1px solid #FF8A7C;
+}
