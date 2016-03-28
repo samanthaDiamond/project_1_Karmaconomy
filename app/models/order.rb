@@ -8,6 +8,8 @@
 #  karma      :integer
 #  created_at :datetime
 #  updated_at :datetime
+#  accept_id  :integer
+#  complete   :boolean
 #
 
 class Order < ActiveRecord::Base

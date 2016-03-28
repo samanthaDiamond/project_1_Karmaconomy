@@ -2,16 +2,18 @@
 #
 # Table name: users
 #
-#  id         :integer          not null, primary key
-#  name       :text
-#  username   :text
-#  postcode   :integer
-#  biography  :text
-#  image      :text
-#  karma      :integer
-#  created_at :datetime
-#  updated_at :datetime
-#  email      :text
+#  id              :integer          not null, primary key
+#  name            :text
+#  username        :text
+#  postcode        :integer
+#  biography       :text
+#  image           :text
+#  karma           :integer
+#  created_at      :datetime
+#  updated_at      :datetime
+#  email           :text
+#  password_digest :string
+#  admin           :boolean          default("false")
 #
 
 class User < ActiveRecord::Base

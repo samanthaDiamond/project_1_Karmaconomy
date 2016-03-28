@@ -4,87 +4,38 @@
   <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+
+  <title>Karmaconomy</title>
 </head>
 <body>
-  <div class="container">
-    <div class="nav_container">
-      <div class="nav_background"></div>
-      <nav>
-        <% if logged_in? %>
-          <%= link_to "Home", root_path %>
-          <%= link_to "Profile", current_user %>
-          <%= link_to "All Deeds", deeds_path %>
-          <%= link_to "New Deed", new_deed_path %>
-          <%= link_to "Log out", logout_path, method: "delete" %>
-        <% else %>
-          <%= link_to "Home", root_path %>
-          <%= link_to "All Deeds", deeds_path %>
-          <%= link_to "Login", login_path %>
-          <%= link_to "Sign up now!", signup_path %>
-        <% end %>
-      </nav>
-    </div>
-  </div>
+  <!-- <nav class="fixed">
+    <% if logged_in? %>
+      <%= link_to "HOME", root_path %>
+      <%= link_to "PROFILE", current_user %>
+      <%= link_to "ALL DEEDS", deeds_path %>
+      <%= link_to "NEW DEED", new_deed_path %>
+      <%= link_to "LOG OUT", logout_path, method: "delete" %>
+    <% else %>
+      <%= link_to "HOME", root_path %>
+      <%= link_to "DEEDS", deeds_path %>
+      <%= link_to "LOGIN", login_path %>
+      <%= link_to "SIGN UP!", signup_path %>
+    <% end %>
+  </nav> -->
+
 <% flash.each do |message_type, message| %>
   <div class="alert alert-<%= message_type %>"><%= message %></div>
 <% end %>
 
 <%= yield %>
 
+  <footer >
+    <div class="social_container">
+      <i class="fa fa-twitter fa-2x"></i>
+      <i class="fa fa-facebook fa-2x"></i>
+      <i class="fa fa-pinterest-p fa-2x"></i>
+      <i class="fa fa-instagram fa-2x"></i>
+    </div>
+  </footer>
 </body>
 </html>
-
-<!-- <!DOCTYPE html>
-<html>
-<head>
-  <title>Tutorial</title>
-  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width = device-width, initial-scale = 1">
-  <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-</head>
-<body>
-  <header class="navbar navbar-fixed-top navbar-inverse">
-    <div class="container">
-          <nav>
-           <ul class="nav navbar-nav navbar-right">
-             <li><%= link_to "Home", root_path %></li>
-             <li><%= link_to 'All Deeds', deeds_path %></li>
-             <% if logged_in? %>
-               <li><%= link_to 'New Deed', new_deed_path %></li>
-               <li class="dropdown">
-                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                  Profile
-                  </a>
-                 <ul class="dropdown-menu">
-                   <li><%= link_to "View profile", current_user %></li>
-                   <li><%= link_to "Settings", edit_user_path(current_user) %></li>
-
-                   <li class="divider"></li>
-                   <li class="divider"></li>
-                   <li>
-                     <%= link_to "Log out", logout_path, method: "delete" %>
-                   </li>
-                 </ul>
-               </li>
-             <% else %>
-               <li><%= link_to "Login", login_path %></li>
-             <% end %>
-           </ul>
-         </nav>
-    </div>
-</header>
-
-<h1>Karmaconomy</h1>
-
-<% flash.each do |message_type, message| %>
-  <div class="alert alert-<%= message_type %>"><%= message %></div>
-<% end %>
-
-<%= yield %>
-</body>
-</html> -->

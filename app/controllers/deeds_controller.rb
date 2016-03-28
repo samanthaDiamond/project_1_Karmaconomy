@@ -17,7 +17,7 @@ class DeedsController < ApplicationController
     user_karma = user.karma
     deed_karma = deed.karma
     if user_karma >= deed_karma && deed.save
-      Order.create(deed_id: deed.id, user_id: current_user.id, karma: deed_karma)
+      Order.create(deed_id: deed.id, user_id: current_user.id, karma: deed_karma, accept_id: -1, complete: false)
       user.update_attribute(:karma, user_karma - deed_karma)
       redirect_to deed
     else
@@ -55,9 +55,23 @@ class DeedsController < ApplicationController
     end
   end
 
-  def accept
-    
-  end
+  # def accept
+  #   deed = Deed.find params[:id]
+  #   order = Order.find_by(deed_id: deed.id)
+  #   order.update_attribute(:accept_id, current_user.id)
+  #   # notify deed owner of acceptance
+  #   redirect_to deed
+  # end
+  #
+  # def complete
+  #   deed = Deed.find params[:id]
+  #   order = Order.find_by(deed_id: deed.id)
+  #   order.update_attribute(:complete, true)
+  #   user_accepted = User.find_by(id: order.accept_id)
+  #   user_accepted.update_attribute(:karma, user_accepted.karma + order.karma)
+  #   redirect_to deed
+  #   # display complete
+  # end
 
   private
   def deed_params
