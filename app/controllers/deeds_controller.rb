@@ -33,8 +33,17 @@ class DeedsController < ApplicationController
   def update
     # check karma point available
     deed = Deed.find params[:id]
-    deed.update deed_params
-    redirect_to deed
+    user = User.find_by(id: current_user.id)
+    user_karma = user.karma + deed.karma
+    new_deed_karma = deed_params["karma"].to_i
+    if user_karma >= new_deed_karma
+      user.update_attribute(:karma, user_karma-new_deed_karma)
+      deed.update deed_params
+      redirect_to deed
+    else
+      flash.now[:danger] = "Sorry, insufficient karma available."
+      redirect_to deeds_path(deed)
+    end
   end
 
   def show
@@ -71,7 +80,7 @@ class DeedsController < ApplicationController
   end
 
   def completed
-    @deed = Deed.find params[:id]
+    deed = Deed.find params[:id]
     order = Order.find_by(deed_id: deed.id)
     order.update_attribute(:complete, true)
     user_accepted = User.find_by(id: order.accept_id)

@@ -1,3 +1,4 @@
 
-
-<h1><%= @user.name %></h1>
+<% User.all.each do |u| %>
+  <li><%= u.name %></li>
+<% end %>

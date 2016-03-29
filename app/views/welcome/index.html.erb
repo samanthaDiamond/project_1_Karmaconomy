@@ -10,6 +10,9 @@
         <%= link_to "DEEDS", deeds_path %>
         <%= link_to "LOGIN", login_path %>
         <%= link_to "SIGN UP!", signup_path %>
+        <% if logged_in? %>
+          <%= link_to "PROFILE", @current_user %>
+        <% end %>
       </nav>
     </header>
     <div class="bold welcome_main">

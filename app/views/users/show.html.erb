@@ -31,10 +31,10 @@
   </ul>
 
 <%= link_to 'Edit profile', edit_user_path(@user) %>
-| <%= link_to 'Delete profile', @user, :method => :delete %>
+<%= link_to 'Delete profile', @user, :method => :delete %>
 
-<% if current_user.admin? && current_user.present? %>
-  | <%= link_to 'All users', users_path %>
+<% if current_user.admin? %>
+  <%= link_to 'All users', users_path %>
 <% end %>
 
 <h2>Deeds</h2>
@@ -45,8 +45,6 @@
     <% deed = Deed.find_by(id: order.deed_id) %>
     <h3><%= link_to(deed.title, deed_path(deed)) %></h3>
     <p><%= deed.description%></p>
-    <%= link_to 'Edit deed', edit_deed_path(deed) %>
-    <%= link_to 'Delete deed', deed, :method => :delete %>
     <p>------------------</p>
   <% end %>
 <% end %>

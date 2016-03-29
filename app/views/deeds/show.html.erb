@@ -11,15 +11,25 @@
     <li><%= @deed.deed_type %></li>
   </ul>
 
-<%= form_tag accept_deed_path do %>
-  <%= submit_tag "Accept!" %>
-<% end %>
+<% order = Order.find_by(deed_id: @deed.id) %>
+<% status = get_order_status(order) %>
 
-<% order = Order.find_by(user_id: @current_user.id) %>
-<% if order && @current_user.id == order.user_id && order.accept_id > 0 %>
-  <%= form_tag deed_completed_path do %>
-    <%= submit_tag "Completed!" %>
+<p>Status: <%= status %></p>
+
+<% if logged_in? %>
+  <% if status == "Available" %>
+    <% if deed_belongs_to_logged_in_user?(@deed) %>
+      <%= link_to 'Edit', edit_deed_path(@deed) %>
+      <%= link_to 'Delete', @deed, :method => :delete %>
+    <% else %>
+      <%= form_tag accept_deed_path do %>
+        <%= submit_tag "Accept!" %>
+      <% end %>
+    <% end %>
   <% end %>
-<% else %>
-  <p>knlknlkn</p>
+  <% if status == "Accepted" && deed_belongs_to_logged_in_user?(@deed) %>
+    <%= form_tag deed_completed_path do %>
+      <%= submit_tag "Completed!" %>
+    <% end %>
+  <% end %>
 <% end %>

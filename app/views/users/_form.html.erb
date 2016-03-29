@@ -1,11 +1,12 @@
 
     <%= form_for(@user) do |f| %>
-      <% if @user.errors.any? %>
-      <%= pluralize(@user.errors.count, "error") %>.
+        <% if @user.errors.any? %>
+          <%= pluralize(@user.errors.count, "error") %>
+        <% else %>
           <ul>
           <% @user.errors.full_messages.each do |msg| %>
             <li><%= msg %></li>
-          <% end %>
+        <% end %>
           </ul>
       <% end %>
 
