@@ -10,3 +10,16 @@
     <li><%= @deed.karma %></li>
     <li><%= @deed.deed_type %></li>
   </ul>
+
+<%= form_tag accept_deed_path do %>
+  <%= submit_tag "Accept!" %>
+<% end %>
+
+<% order = Order.find_by(user_id: @current_user.id) %>
+<% if order && @current_user.id == order.user_id && order.accept_id > 0 %>
+  <%= form_tag deed_completed_path do %>
+    <%= submit_tag "Completed!" %>
+  <% end %>
+<% else %>
+  <p>knlknlkn</p>
+<% end %>

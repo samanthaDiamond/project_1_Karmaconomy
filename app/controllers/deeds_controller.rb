@@ -55,23 +55,29 @@ class DeedsController < ApplicationController
     end
   end
 
-  # def accept
-  #   deed = Deed.find params[:id]
-  #   order = Order.find_by(deed_id: deed.id)
-  #   order.update_attribute(:accept_id, current_user.id)
-  #   # notify deed owner of acceptance
-  #   redirect_to deed
-  # end
-  #
-  # def complete
-  #   deed = Deed.find params[:id]
-  #   order = Order.find_by(deed_id: deed.id)
-  #   order.update_attribute(:complete, true)
-  #   user_accepted = User.find_by(id: order.accept_id)
-  #   user_accepted.update_attribute(:karma, user_accepted.karma + order.karma)
-  #   redirect_to deed
-  #   # display complete
-  # end
+  def accept
+    @deed = Deed.find params[:id]
+  end
+
+  def accepted
+    deed = Deed.find params[:id]
+    order = Order.find_by(deed_id: deed.id)
+    order.update_attribute(:accept_id, current_user.id)
+    redirect_to deed
+  end
+
+  def complete
+    @deed = Deed.find params[:id]
+  end
+
+  def completed
+    @deed = Deed.find params[:id]
+    order = Order.find_by(deed_id: deed.id)
+    order.update_attribute(:complete, true)
+    user_accepted = User.find_by(id: order.accept_id)
+    user_accepted.update_attribute(:karma, user_accepted.karma + order.karma)
+    redirect_to deed
+  end
 
   private
   def deed_params

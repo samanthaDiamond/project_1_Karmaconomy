@@ -1,21 +1,22 @@
 <head>
-  <div class="nav_container">
-  <nav class="fixed">
-    <% if logged_in? %>
-      <%= link_to "HOME", root_path %>
-      <%= link_to "PROFILE", current_user %>
-      <%= link_to "ALL DEEDS", deeds_path %>
-      <%= link_to "NEW DEED", new_deed_path %>
-      <%= link_to "LOG OUT", logout_path, method: "delete" %>
-    <% else %>
-      <%= link_to "HOME", root_path %>
-      <%= link_to "DEEDS", deeds_path %>
-      <%= link_to "LOGIN", login_path %>
-      <%= link_to "SIGN UP!", signup_path %>
-    <% end %>
-  </nav>
+  <div class="relative">
+    <div class="fixed top-0 left-0 right-0 p2">
+      <% if logged_in? %>
+        <%= link_to "HOME", root_path %>
+        <%= link_to "PROFILE", current_user %>
+        <%= link_to "ALL DEEDS", deeds_path %>
+        <%= link_to "NEW DEED", new_deed_path %>
+        <%= link_to "LOG OUT", logout_path, method: "delete" %>
+      <% else %>
+        <%= link_to "HOME", root_path %>
+        <%= link_to "DEEDS", deeds_path %>
+        <%= link_to "LOGIN", login_path %>
+        <%= link_to "SIGN UP!", signup_path %>
+      <% end %>
+    </div>
   </div>
-<div>
+
+<div class="title_container">
   <h1 class"h1 user_name><%= @user.username %></h1>
 </div>
 </head>

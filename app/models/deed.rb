@@ -28,10 +28,8 @@ class Deed < ActiveRecord::Base
 
   # validates :image
 
-  # validates :deed_type, presence: true
+  validates :deed_type, presence: true
 
   validates :karma, presence: true
-
-
 
 end

@@ -15,7 +15,7 @@
   </div>
 </div>
 
-<div class="login_container">
+<div class="title_container">
   <div >
       <h2 class="h1">Login</h2>
   </div>
@@ -23,11 +23,11 @@
     <div class="login_form">
       <%= form_for(:session, url: login_path) do |f| %>
         <%= f.label :email %>
-        <%= f.email_field :attr, placeholder: "Email" %>
+        <%= f.email_field :email, placeholder: "Email" %>
         <br />
         <br />
         <%= f.label :password %>
-        <%= f.password_field :attr, placeholder: "Password" %>
+        <%= f.password_field :password, placeholder: "Password" %>
         <br />
         <br />
         <%= f.submit "Log in", :class => 'btn'%>

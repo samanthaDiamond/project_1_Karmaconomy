@@ -28,6 +28,8 @@ class User < ActiveRecord::Base
 
   validates :biography, presence: true, length: { maximum: 500 }
 
+  validates :karma, presence: true
+
   # validates :image   ???
 
   before_save { self.email = email.downcase }
@@ -35,7 +37,5 @@ class User < ActiveRecord::Base
   validates :email, presence: true, length: { maximum: 255 }, format: { with: VALID_EMAIL_REGEX }, uniqueness: { case_sensitive: false }
   has_secure_password
   validates :password, presence: true, length: { minimum: 6 }, allow_nil: true
-
-  # RUBY GUIDE - refer to ruby guide for more info
 
 end
