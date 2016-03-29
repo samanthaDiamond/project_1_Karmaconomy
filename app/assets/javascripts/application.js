@@ -13,8 +13,8 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
-//= require basscss/basscss
-//= require basscss/basscss-addons
+///= require basscss/basscss
+///= require basscss/basscss-addons
 //= require hover
 //= require font-awesome
 //= require_tree .
