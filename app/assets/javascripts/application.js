@@ -16,5 +16,5 @@
 // require basscss/basscss
 // require basscss/basscss-addons
 // require hover
-// require font-awesome
+//= require font-awesome
 //= require_tree .
