@@ -1,50 +1,52 @@
-<head>
-  <div class="relative">
-    <div class="fixed top-0 left-0 right-0 p2">
-      <% if logged_in? %>
-        <%= link_to "HOME", root_path %>
-        <%= link_to "PROFILE", current_user %>
-        <%= link_to "ALL DEEDS", deeds_path %>
-        <%= link_to "NEW DEED", new_deed_path %>
-        <%= link_to "LOG OUT", logout_path, method: "delete" %>
-      <% else %>
-        <%= link_to "HOME", root_path %>
-        <%= link_to "DEEDS", deeds_path %>
-        <%= link_to "LOGIN", login_path %>
-        <%= link_to "SIGN UP!", signup_path %>
-      <% end %>
+<div class="h1 center">Karmaconomy</div>
+
+<section class="container px1 py3">
+  <div class="clearfix mxn2">
+    <div class="sm-col sm-col-4 md-col-3 sm-show">
+      <ul class="list-reset">
+        <!-- <li><%= image_tag(@user.image, :class => 'feature') %></li> -->
+        <li><h3 class"h3 user_name"><%= @user.username %></h3></li>
+        <li><%= @user.name %></li>
+
+        <li>Postcode: <%= @user.postcode %></li>
+        <li><%= @user.email %></li>
+
+        <%= link_to 'Edit profile', edit_user_path(@user) %>
+        <%= link_to 'Delete profile', @user, :method => :delete %>
+
+        <% if current_user.admin? %>
+          <%= link_to 'All users', users_path %>
+        <% end %>
+
+      </ul>
+    </div>
+    <div class="sm-col sm-col-8 md-col-9 px2">
+      <div>
+        <h2 class="h3">About <%= @user.username %></h2>
+        <p><%= @user.biography %></p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem unde eius voluptates, rerum commodi magnam voluptas deserunt atque provident consequuntur eligendi iure ducimus eaque nostrum, libero a accusamus! Eum, laboriosam!</p>
+      </div>
+      <div>
+        <h2 class="h3">Karma</h2>
+        <p><%= @user.karma %></p>
+      </div>
     </div>
   </div>
 
-<div class="title_container">
-  <h1 class"h1 user_name><%= @user.username %></h1>
-</div>
-</head>
 
-<li><%= image_tag(@user.image, :class => 'feature') %></li>
-  <ul>
-    <li>Name: <%= @user.name %></li>
-    <li>Biography: <%= @user.biography %></li>
-    <li>Postcode: <%= @user.postcode %></li>
-    <li>Email: <%= @user.email %></li>
-    <li>Karma: <%= @user.karma %></li>
-  </ul>
 
-<%= link_to 'Edit profile', edit_user_path(@user) %>
-<%= link_to 'Delete profile', @user, :method => :delete %>
 
-<% if current_user.admin? %>
-  <%= link_to 'All users', users_path %>
-<% end %>
+</section>
 
-<h2>Deeds</h2>
+<section class="container ">
+  <h2 class="h2 center">Deeds</h2>
 
-<% user = User.find_by(id: current_user.id) %>
-<% Order.all.each do |order| %>
-  <% if order.user_id == user.id %>
-    <% deed = Deed.find_by(id: order.deed_id) %>
-    <h3><%= link_to(deed.title, deed_path(deed)) %></h3>
-    <p><%= deed.description%></p>
-    <p>------------------</p>
+  <% user = User.find_by(id: current_user.id) %>
+  <% Order.all.each do |order| %>
+    <% if order.user_id == user.id %>
+      <% deed = Deed.find_by(id: order.deed_id) %>
+      <h3><%= link_to(deed.title, deed_path(deed)) %></h3>
+      <p><%= deed.description%></p>
+    <% end %>
   <% end %>
-<% end %>
+</section>

@@ -9,19 +9,81 @@
 </head>
 <body>
 
+  <header class="white bg-gray bg-cover bg-center">
+    <nav class="clearfix white">
+      <div class="sm-col">
+        <%= link_to "Home", root_path, :class => "btn py2" %>
+        </div>
+        <% if logged_in? %>
+          <%= link_to "Profile", @current_user, :class => "btn py2" %>
+          <% else %>
+          <%= link_to "Login", login_path, :class => "btn py2" %>
+        <% end %>
+      </div>
+      <div class="relative inline-block" data-disclosure>
+        <button type="button" class="btn btn-primary">
+          Deed &#9662;
+        </button>
+      <div data-details class="absolute left-0 mt1 nowrap black bg-white rounded">
+          <%= link_to "All deeds", deeds_path, :class => "btn block" %>
+          <%= link_to "New deed", new_deed_path, :class => "btn block" %>
+      </div>
+    </nav>
+  </header>
+
+
 <% flash.each do |message_type, message| %>
   <div class="alert alert-<%= message_type %>"><%= message %></div>
 <% end %>
 
 <%= yield %>
 
-  <footer >
-    <div class="social_container">
+  <footer>
+    <div class="social_container center">
       <i class="fa fa-twitter fa-2x"></i>
       <i class="fa fa-facebook fa-2x"></i>
       <i class="fa fa-pinterest-p fa-2x"></i>
       <i class="fa fa-instagram fa-2x"></i>
     </div>
   </footer>
+
+
+  <script>
+  var Disclosure = function(el, options) {
+      el.isActive = false;
+      el.details = el.querySelectorAll('[data-details]');
+      el.hide = function() {
+        for (var i = 0; i < el.details.length; i++) {
+          el.details[i].style.display = 'none';
+        }
+      };
+      el.show = function() {
+        for (var i = 0; i < el.details.length; i++) {
+          el.details[i].style.display = 'block';
+        }
+      };
+      el.toggle = function(e) {
+        e.stopPropagation();
+        el.isActive = !el.isActive;
+        if (el.isActive) {
+          el.show();
+        } else {
+          el.hide();
+        }
+      }
+      el.addEventListener('click', function(e) {
+        el.toggle(e);
+      });
+      el.hide();
+      return el;
+    };
+
+    var disclosures = document.querySelectorAll('[data-disclosure]');
+
+    for (var i = 0; i < disclosures.length; i++) {
+      disclosures[i] = new Disclosure(disclosures[i]);
+    }
+
+  </script>
 </body>
 </html>

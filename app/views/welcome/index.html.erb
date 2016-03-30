@@ -1,43 +1,56 @@
-<body class="welcome_body">
-  <div class="background"></div>
-    <header>
-      <h1 class="h1 karmaconomy_heading"> KARMACONOMY</h1>
-      <div class="bold sub_heading">
-        <h2 class="h2">Together let's make the world a better place.</h2>
-      </div>
-      <nav class="bold nav_welcome">
-        <%= link_to "HOME", root_path %>
-        <%= link_to "DEEDS", deeds_path %>
-        <%= link_to "LOGIN", login_path %>
-        <%= link_to "SIGN UP!", signup_path %>
-        <% if logged_in? %>
-          <%= link_to "PROFILE", @current_user %>
-        <% end %>
-      </nav>
-    </header>
-    <div class="bold welcome_main">
+<div class="center px2 py4">
+    <h1 class="h1 h0-responsive caps mt4 mb0 regular">KARMACONOMY</h1>
+    <p class="h3">Together let's make the world a better place.</p>
+    <%= link_to "SIGN UP!", signup_path, :class => "h3 btn btn-primary mb4" %>
+</div>
+<body>
+  <div class="container center">
+    <div class="clearfix bold">
       <h2>How Karmoconomy Works</h2>
       <p class="h3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus eligendi tenetur voluptatibus odio ipsum deleniti nihil quibusdam molestiae reiciendis, eum alias incidunt fuga quidem similique dolore aliquid eos quam. Sit?</p>
       <p class="h3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus eligendi tenetur voluptatibus odio ipsum deleniti nihil quibusdam molestiae reiciendis, eum alias incidunt fuga quidem similique dolore aliquid eos quam. Sit?</p>
     </div>
+  </div>
 
-    <div class="deed_container">
-      <div class="welcome_deed flex_container">
-          <div class="box1 flex-auto border box1_background" data-x="0" data-y="0"></div>
-          <div class="box2 flex-auto border" data-x="0" data-y="1"></div>
-          <div class="box3 flex-auto border" data-x="0" data-y="2"></div>
-        <div class="welcome_deed flex_container">
-          <div class="box4 flex-auto border" data-x="1" data-y="0"></div>
-          <div class="box5 flex-auto border" data-x="1" data-y="1"></div>
-          <div class="box6 flex-auto border" data-x="1" data-y="2"></div>
-        </div>
+
+</div>
+  <section class="container">
+    <div class="clearfix center">
+      <div class="col col-3 sm-col-2 m1">
+        <a href="#" class="block">
+          <img src="http://d2v52k3cl9vedd.cloudfront.net/assets/images/placeholder-square.svg" class="block" />
+        </a>
+      </div>
+      <div class="col col-3 sm-col-2 m1">
+        <a href="#" class="block">
+          <img src="http://d2v52k3cl9vedd.cloudfront.net/assets/images/placeholder-square.svg" class="block" />
+        </a>
+      </div>
+      <div class="col col-3 sm-col-2 m1">
+        <a href="#" class="block">
+          <img src="http://d2v52k3cl9vedd.cloudfront.net/assets/images/placeholder-square.svg" class="block" />
+        </a>
       </div>
     </div>
-
-    <div class="social_media_container">
-
-
+    <div class="clearfix">
+      <div class="col col-3 sm-col-2 m1">
+        <a href="#" class="block">
+          <img src="http://d2v52k3cl9vedd.cloudfront.net/assets/images/placeholder-square.svg" class="block" />
+        </a>
+      </div>
+      <div class="col col-3 sm-col-2 m1">
+        <a href="#" class="block">
+          <img src="http://d2v52k3cl9vedd.cloudfront.net/assets/images/placeholder-square.svg" class="block" />
+        </a>
+      </div>
+      <div class="col col-3 sm-col-2 m1">
+        <a href="#" class="block">
+          <img src="http://d2v52k3cl9vedd.cloudfront.net/assets/images/placeholder-square.svg" class="block" />
+        </a>
+      </div>
     </div>
+  </section>
 
 
 </body>
+</html>

@@ -1,31 +1,32 @@
-<%= form_for @deed do |f| %>
+<div class="container profile_form">
+  <form class="sm-col-3 m3">
+    <%= form_for(@deed) do |f| %>
     <%= f.label :title %>
-    <%= f.text_field :title %>
-    <br />
-    <br />
+    <%= f.text_field :title, class: 'block col-12 mb1 field' %>
+
     <%= f.label :description %>
-    <%= f.text_field :description %>
-    <br />
-    <br />
+    <%= f.text_field :description, class: 'block col-12 mb1 field' %>
+
     <%= f.label :postcode %>
-    <%= f.number_field :postcode %>
-    <br />
-    <br />
+    <%= f.number_field :postcode, class: 'block col-12 mb1 field' %>
+
     <%= f.label :date %>
-    <%= f.text_field :date %>
-    <br />
-    <br />
+    <%= f.text_field :date, class: 'block col-12 mb1 field' %>
+
     <%= f.label :image %>
-    <%= f.url_field :image %>
-    <br />
-    <br />
+    <%= f.url_field :image, class: 'block col-12 mb1 field' %>
+
     <%= f.label :karma %>
-    <%= f.number_field :karma %>
-    <br />
-    <br />
+    <%= f.number_field :karma, class: 'block col-12 mb1 field' %>
+
     <%= f.label :deed_type %>
-    <%= f.select :deed_type, ['request', 'offer'] %>
+    <br />
+    <%= f.select :deed_type, ['request', 'offer'], class: 'block col-12 mb1 field' %>
+
     <br />
     <br />
-    <%= f.submit "Submit", :class => 'btn' %>
-<% end %>
+
+    <%= f.submit "Submit", class: "btn btn-primary" %>
+  <% end %>
+  </form>
+</div>
