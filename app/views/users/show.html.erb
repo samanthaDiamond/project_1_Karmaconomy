@@ -4,8 +4,8 @@
   <div class="clearfix mxn2 profile_content">
     <div class="sm-col sm-col-4 md-col-3 sm-show profile_content">
       <ul class="list-reset">
-        <!-- <li><%= image_tag(@user.image, :class => 'feature') %></li> -->
-        <li class="profile_sub_heading"><%= @user.username %></li>
+        <li class="profile_pic"><%= image_tag(@user.image, :class => 'feature') %></li>
+        <li class="profile_sub_heading bold"><%= @user.username %></li>
         <li><%= @user.name %></li>
         <li>Postcode: <%= @user.postcode %></li>
         <li><%= @user.email %></li>
@@ -33,16 +33,17 @@
   </div>
 
 <section class="container ">
-  <h3 class="h3 center profile_sub_heading">Deeds</h>
-
+  <div class="">
+    <h3 class="h3 center deed_heading">YOUR DEEDS</h>
+  </div>
   <% user = User.find_by(id: current_user.id) %>
   <% Order.all.each do |order| %>
     <% if order.user_id == user.id %>
       <% deed = Deed.find_by(id: order.deed_id) %>
       <div class="md-col-3">
-        <div class="p2 bg-white border rounded">
+        <div class="p2 bg-white border rounded deed_links">
           <img src="http://d2v52k3cl9vedd.cloudfront.net/assets/images/placeholder-square.svg" class="mb2" />
-          <h1 class="h2 mt0"><%= link_to(deed.title, deed_path(deed)) %></h1>
+          <h1 class="h2 mt0 center"><%= link_to(deed.title, deed_path(deed)) %></h1>
         </div>
       </div>
     <% end %>

@@ -1,13 +1,17 @@
+<div class="h1 center user_title">KARMACONOMY</div>
 <section class="container deed_profile px1 py3">
-  <div class="h1 center">Karmaconomy</div>
-  <div class="clearfix mxn2">
+  <!-- <div class="h1 center">Karmaconomy</div> -->
+  <div class="clearfix mxn2 deed_content">
     <div class="sm-col sm-col-4 md-col-3 sm-show">
       <ul class="list-reset">
-        <li><h3 class"h3 deed_title"><%= @deed.title %></h3></li>
-<!-- <li><%= image_tag(@deed.image, :class => 'feature') %></li> -->
+        <li><%= image_tag(@deed.image, :class => 'feature') %></li>
+        <li class"h3 bold deed_sub_heading"><%= @deed.title %></li>
         <% order = Order.find_by(deed_id: @deed.id) %>
+        <li>Postcode: <%= @deed.postcode %></li>
+        <li>Date: <%= @deed.date %></li>
+        <li>Deed type: <%= @deed.deed_type %></li>
         <% status = get_order_status(order) %>
-        <p>Status: <%= status %></p>
+        Status: <%= status %>
         <% if logged_in? %>
           <% if status == "Available" %>
             <% if deed_belongs_to_logged_in_user?(@deed) %>
@@ -21,23 +25,19 @@
           <% end %>
           <% if status == "Accepted" && deed_belongs_to_logged_in_user?(@deed) %>
             <%= form_tag deed_completed_path do %>
-              <%= submit_tag "Completed!" %>
+              <%= submit_tag "Complete?", class: "btn btn-primary" %>
             <% end %>
           <% end %>
         <% end %>
-
-        <li>Postcode: <%= @deed.postcode %></li>
-        <li>Date: <%= @deed.date %></li>
-        <li>Deed type: <%= @deed.deed_type %></li>
       </ul>
     </div>
     <div class="sm-col sm-col-8 md-col-9 px2">
       <div>
-        <h3 class="h3">Details</h3>
+        <h3 class="h3 deed_sub_heading">Details</h3>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem unde eius voluptates, rerum commodi magnam voluptas deserunt atque provident consequuntur eligendi iure ducimus eaque nostrum, libero a accusamus! Eum, laboriosam!</p>
       </div>
       <div>
-        <h2 class="h3">Karma</h2>
+        <h3 class="h3 deed_sub_heading">Karma</h>
         <p><%= @deed.karma %></p>
       </div>
     </div>

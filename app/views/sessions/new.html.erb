@@ -1,25 +1,21 @@
+<div class="h1 center user_title">KARMACONOMY</div>
 
+<div class="h2 center login_heading">Login</div>
 
-<div class="title_container">
-  <div >
-      <h2 class="h1">Login</h2>
-  </div>
-  <div>
+<div class="container login_form">
+  <div class="sm-col-3 m3 profile_form">
     <div class="login_form">
       <%= form_for(:session, url: login_path) do |f| %>
         <%= f.label :email %>
-        <%= f.email_field :email, placeholder: "Email" %>
-        <br />
-        <br />
+        <%= f.email_field :email, class: 'block col-12 mb1 field'  %>
+
         <%= f.label :password %>
-        <%= f.password_field :password, placeholder: "Password" %>
-        <br />
-        <br />
-        <%= f.submit "Log in", :class => 'btn'%>
+        <%= f.password_field :password, class: 'block col-12 mb1 field'  %>
+
+        <%= f.submit "Log in", class: "btn btn-primary" %>
       <% end %>
-
-
-      <p>New user? <%= link_to "Sign up now!", new_user_path %></p>
     </div>
+    <br />
+    <p>New user? <%= link_to "Sign up now!", new_user_path %></p>
   </div>
 </div>

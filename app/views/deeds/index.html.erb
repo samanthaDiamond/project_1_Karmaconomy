@@ -1,7 +1,16 @@
-<div class="container center">
-<h2 class="h2">DEEDS</h2>
+<div class="h1 center user_title">KARMACONOMY</div>
+
+<section class="container ">
+  <div class="">
+    <h3 class="h3 center deed_heading">YOUR DEEDS</h>
+  </div>
   <% @deeds.each do |deed| %>
-    <hr />
-    <%= link_to(deed.title.upcase, deed_path(deed)) %>
+  <div class="md-col-3">
+      <div class="p2 bg-white border rounded deed_links">
+        <img src="http://d2v52k3cl9vedd.cloudfront.net/assets/images/placeholder-square.svg" class="mb2" />
+        <h1 class="h2 mt0 center"><%= link_to(deed.title, deed_path(deed)) %></h1>
+      </div>
+  </div>
   <% end %>
-</div>
+  </div>
+</section>

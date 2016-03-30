@@ -11,6 +11,10 @@ nav {
   padding-left: 5px;
 }
 
+div.page_header>a {
+  font-family: 'Questrial', sans-serif;
+}
+
 .btn {
   background-color: #FF8A7C !important;
   outline: none;
@@ -31,7 +35,6 @@ p.sub_title {
 h2.how_it_works {
   font-family: 'Give You Glory', cursive;
   color: #FF8A7C;
-  // color: #374665;
   font-size: 35px;
 }
 
@@ -44,7 +47,6 @@ p.main_content {
 .social_container>i {
   color: #374665;
   margin: 100px 10px 10px 10px;
-
 }
 
 div.user_title {
@@ -55,19 +57,28 @@ div.user_title {
   margin-top: 50px;
 }
 
+li.profile_pic>img {
+  width: 200px;
+  height: 195px;
+  border-radius: 50%;
+  border-width: 2px;
+  border-color: #FF8A7C;
+}
+
 .profile_content {
   font-family: 'Give You Glory', cursive;
   color: #374665;
   font-size: 20px;
   line-height: 170%;
   text-decoration: none
-  // font-family: 'Caveat', cursive;
 }
 
-.profile_sub_heading {
-  font-family: 'Questrial', sans-serif;
+h3.deed_heading {
+  font-family: 'Give You Glory', cursive;
+  color: #374665;
   font-weight: bold;
-  font-size: 22px;
+  font-size: 28px;
+  margin: 40px 0px 100px 0px;
 }
 
 h3.profile_sub_heading {
@@ -82,247 +93,54 @@ h3.profile_sub_heading {
   font-weight: bold;
 }
 
+div.deed_links {
+  border-color: #FF8A7C;
+  border-width: 2px;
+}
 
+.deed_links>h1>a {
+  text-decoration: none;
+  color: #FF8A7C;
+  font-weight: bold;
+  font-family: 'Give You Glory', cursive;
+  font-size: 40px;
+}
 
+div.deed_content {
+  font-family: 'Give You Glory', cursive;
+  color: #374665;
+  font-size: 20px;
+  line-height: 170%;
+  text-decoration: none;
+  font-weight: bold;
+}
 
+h3.deed_sub_heading {
+  font-family: 'Questrial', sans-serif;
+  font-size: 22px;
+  color: #374665;
+}
 
+div.profile_form>form.new_deed {
+  font-family: 'Questrial', sans-serif;
+  align-items: center;
+  margin: 0 auto;
+}
 
+div.new_deed {
+  margin-top: 30px;
+  font-family: 'Questrial', sans-serif;
+  color: #374665;
+}
 
+div.new_user {
+  margin-top: 30px;
+  font-family: 'Questrial', sans-serif;
+  color: #374665;
+}
 
-
-// * {
-//   box-sizing: border-box;
-// }
-//
-// // HOME PAGE
-
-// div.background {
-//   opacity: 0.5;
-//   width: 100%;
-//   background: white;
-//   height: 100vh;
-//   position: absolute;
-//   top: 0;
-//   left: 0;
-//   z-index: -1;
-// }
-//
-// .header {
-//   background-image: image-url("background_image.jpg");
-//   background-size: cover;
-//   height: 100vh;
-//   background-repeat: no-repeat;
-// }
-
-
-
-// .welcome_body {
-//   background-image: image-url("background_image.jpg");
-//   background-size: cover;
-//   height: 100vh;
-//   background-repeat: no-repeat;
-// }
-//
-// h1.karmaconomy_heading {
-//   margin-top: 130px;
-//   margin-bottom: 0;
-//   text-align: center;
-//   color: #374665;
-//   font-family: 'Questrial', sans-serif;
-//   // font-family: 'Give You Glory', cursive;
-//   font-size: 80px;
-//   line-height: 30px;
-// }
-//
-// div.sub_heading {
-//   text-align: center;
-//   color: #374665;
-//   font-family: 'Questrial', sans-serif;
-//   font-family: 'Give You Glory', cursive;
-//   margin-bottom: 180px;
-// }
-//
-// .nav_welcome {
-//   text-align: center;
-//   font-size: 25px;
-//   font-family: 'Architects Daughter', cursive;
-//   margin-bottom: 430px;
-// }
-//
-// .nav_welcome>a {
-//   text-decoration: none;
-//   color: #374665;
-//   margin: 15px;
-// }
-//
-// .nav_welcome>a:hover {
-//   color: #FF8A7C;
-// }
-//
-//
-// // HOME PAGE: How it works section
-//
-// .welcome_main>h2 {
-//   font-size: 35px;
-// }
-//
-// .welcome_main {
-//   width: 960px;
-//   margin: 0 auto;
-//   text-align: center;
-//   color: #374665;
-//   // font-family: 'Questrial', sans-serif;
-//   font-family: 'Give You Glory', cursive;
-//   margin-bottom: 50px;
-// }
-//
-// // HOME PAGE: Deeds section
-//
-// .deed_container {
-//   width: 960px;
-//   text-align: center;
-//   margin: 0 auto;
-//   margin-bottom: 60px;
-// }
-//
-// .flex-auto {
-//   border: 3px solid #FF8A7C;
-//   width: 250px;
-//   height: 250px;
-//   display: inline-block;
-//   margin: 3px;
-// }
-// //
-// .box1 {
-//   background-image: image-url("mine_yours_ours.png");
-//   background-size: cover;
-// }
-//
-// .box2 {
-//   background-image: image-url("tools_fix_it.jpg");
-//   background-size: cover;
-//   opacity: 0.5;
-//   transition: opacity 0.3s ease-in-out;
-// }
-//
-// .box2:hover {
-//   background-image: image-url("tools_fix_it.jpg");
-//   background-size: cover;
-//   opacity: 0.9;
-//   transition: opacity 0.3s ease-in-out;
-// }
-//
-//
-// .box3 {
-//   background-image: image-url("camera_borrow_it.jpg");
-//   background-size: cover;
-//   opacity: 0.5;
-//   transition: opacity 0.3s ease-in-out;
-// }
-//
-// .box3:hover {
-//   background-image: image-url("camera_borrow_it.jpg");
-//   background-size: cover;
-//   opacity: 0.9;
-//   transition: opacity 0.3s ease-in-out;
-// }
-//
-// .box4 {
-//   background-image: image-url("pool_use_it.jpg");
-//   background-size: cover;
-//   opacity: 0.5;
-//   transition: opacity 0.3s ease-in-out;
-// }
-//
-// .box4:hover {
-//   background-image: image-url("pool_use_it.jpg");
-//   background-size: cover;
-//   opacity: 0.9;
-//   transition: opacity 0.3s ease-in-out;
-// }
-//
-// .box5 {
-//   background-image: image-url("walk_dog_do_it.jpg");
-//   background-size: cover;
-//   opacity: 0.5;
-//   transition: opacity 0.3s ease-in-out;
-// }
-//
-// .box5:hover {
-//   background-image: image-url("walk_dog_do_it.jpg");
-//   background-size: cover;
-//   opacity: 0.9;
-//   transition: opacity 0.3s ease-in-out;
-// }
-//
-// .box6 {
-//   background-image: image-url("furniture_have_it.jpg");
-//   background-size: cover;
-//   opacity: 0.5;
-//   transition: opacity 0.3s ease-in-out;
-// }
-//
-// .box6:hover {
-//   background-image: image-url("furniture_have_it.jpg");
-//   background-size: cover;
-//   opacity: 0.9;
-//   transition: opacity 0.3s ease-in-out;
-// }
-
-//
-// // APPLICATIONS PAGES
-//
-// // Social media icons
-//
-// .social_container {
-//   text-align: center;
-// }
-//
-// .social_container>i {
-//   margin: 10px;
-//   color: #374665;
-// }
-//
-//
-// // USER SHOW PAGE
-//
-//
-// .fixed {
-//   background-color: rgba(37, 195, 142, 0.2);
-//   text-align: left;
-//   padding: 7px;
-//   font-size: 20px;
-//   font-family: 'Architects Daughter', cursive;
-// }
-//
-// .fixed>a {
-//   text-decoration: none;
-//   color: #374665;
-//   margin: 15px;
-// }
-//
-// div.login_container {
-//   width: 960px;
-//   text-align: center;
-//   margin: 0 auto;
-// }
-//
-// .h1 {
-//   margin: 80px 0px 60px 0px;
-//   font-family: 'Give You Glory', cursive;
-// }
-//
-// .login_form {
-//   font-family: 'Questrial', sans-serif;
-// }
-//
-// .btn {
-//   font-family: 'Questrial', sans-serif;
-//   padding: 7px;
-//   width: auto;
-//   border: 2px solid #FF8A7C;
-// }
-//
-// .btn:hover{
-//   border: 1px solid #FF8A7C;
-// }
+.login_heading {
+  margin-top: 30px;
+  font-family: 'Questrial', sans-serif;
+  color: #374665;
+}
