@@ -26,12 +26,14 @@
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem unde eius voluptates, rerum commodi magnam voluptas deserunt atque provident consequuntur eligendi iure ducimus eaque nostrum, libero a accusamus! Eum, laboriosam!</p>
       </div>
       <div>
-        <h3 class="h3 profile_sub_heading">Karma</h3>
-        <p><%= @user.karma %></p>
+        <h3 class="h3 profile_sub_heading">Karma: <%= @user.karma %></h3>
+        <% (1..@user.karma).each do %>
+          <%= image_tag "karma_icon.png" %>
+        <% end  %>
       </div>
     </div>
   </div>
-
+</section>
 <section class="container ">
   <div class="">
     <h3 class="h3 center deed_heading">YOUR DEEDS</h>

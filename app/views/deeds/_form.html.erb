@@ -1,32 +1,34 @@
 <div class="container">
-  <div class="sm-col-3 m3 bg-white profile_form">
-    <%= form_for(@deed) do |f| %>
-      <%= f.label :title %>
-      <%= f.text_field :title, class: 'block col-12 mb1 field' %>
+  <div class="clearfix mxn2">
+    <div class= "col-4 px2 mx-auto m3 bg-white profile_form">
+      <%= form_for(@deed) do |f| %>
+        <%= f.label :title %>
+        <%= f.text_field :title, class: 'block col-12 mb1 field' %>
 
-      <%= f.label :description %>
-      <%= f.text_field :description, class: 'block col-12 mb1 field' %>
+        <%= f.label :description %>
+        <%= f.text_field :description, class: 'block col-12 mb1 field' %>
 
-      <%= f.label :postcode %>
-      <%= f.number_field :postcode, class: 'block col-12 mb1 field' %>
+        <%= f.label :postcode %>
+        <%= f.number_field :postcode, class: 'block col-12 mb1 field' %>
 
-      <%= f.label :date %>
-      <%= f.text_field :date, class: 'block col-12 mb1 field' %>
+        <%= f.label :date %>
+        <%= f.text_field :date, class: 'block col-12 mb1 field' %>
 
-      <%= f.label :image %>
-      <%= f.url_field :image, class: 'block col-12 mb1 field' %>
+        <%= f.label :image %>
+        <%= f.url_field :image, class: 'block col-12 mb1 field' %>
 
-      <%= f.label :karma %>
-      <%= f.number_field :karma, class: 'block col-12 mb1 field' %>
+        <%= f.label :karma %>
+        <%= f.number_field :karma, class: 'block col-12 mb1 field' %>
 
-      <%= f.label :deed_type %>
-      <br />
-      <%= f.select :deed_type, ['request', 'offer'], class: 'block col-12 mb1 field' %>
+        <%= f.label :deed_type %>
+        <br />
+        <%= f.select :deed_type, ['request', 'offer'], class: 'block col-12 mb1 field' %>
 
-      <br />
-      <br />
+        <br />
+        <br />
 
-      <%= f.submit "Submit", class: "btn btn-primary" %>
-    <% end %>
+        <%= f.submit "Submit", class: "btn btn-primary" %>
+      <% end %>
+    </div>
   </div>
 </div>

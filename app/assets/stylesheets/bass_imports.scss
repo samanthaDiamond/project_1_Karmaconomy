@@ -11,6 +11,12 @@ nav {
   padding-left: 5px;
 }
 
+div.page_header {
+  height: 100vh;
+  z-index: 1;
+  padding-top: 100px;
+}
+
 div.page_header>a {
   font-family: 'Questrial', sans-serif;
 }
@@ -30,6 +36,10 @@ p.sub_title {
   font-family: 'Give You Glory', cursive;
   color: #374665;
   font-size: 25px;
+}
+
+div.about_content {
+  margin: 0 auto;
 }
 
 h2.how_it_works {
@@ -143,4 +153,15 @@ div.new_user {
   margin-top: 30px;
   font-family: 'Questrial', sans-serif;
   color: #374665;
+}
+
+footer.footer_section {
+  background-color: #565C5E;
+  margin-top: 150px;
+  width: 100vw;
+}
+
+div.social_media>i {
+  color: #FF8A7C;
+  margin: 15px 9px 15px 9px;
 }
