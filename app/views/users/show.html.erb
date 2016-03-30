@@ -1,52 +1,50 @@
-<div class="h1 center">Karmaconomy</div>
+<div class="h1 center user_title">KARMACONOMY</div>
 
 <section class="container px1 py3">
-  <div class="clearfix mxn2">
-    <div class="sm-col sm-col-4 md-col-3 sm-show">
+  <div class="clearfix mxn2 profile_content">
+    <div class="sm-col sm-col-4 md-col-3 sm-show profile_content">
       <ul class="list-reset">
         <!-- <li><%= image_tag(@user.image, :class => 'feature') %></li> -->
-        <li><h3 class"h3 user_name"><%= @user.username %></h3></li>
+        <li class="profile_sub_heading"><%= @user.username %></li>
         <li><%= @user.name %></li>
-
         <li>Postcode: <%= @user.postcode %></li>
         <li><%= @user.email %></li>
-
-        <%= link_to 'Edit profile', edit_user_path(@user) %>
-        <%= link_to 'Delete profile', @user, :method => :delete %>
-
+        <%= link_to 'Edit profile', edit_user_path(@user), :class => "profile_links" %>
+        <br />
+        <%= link_to 'Delete profile', @user, :method => :delete, :class => "profile_links" %>
+        <br />
         <% if current_user.admin? %>
-          <%= link_to 'All users', users_path %>
+          <%= link_to 'All users', users_path, :class => "profile_links" %>
         <% end %>
 
       </ul>
     </div>
     <div class="sm-col sm-col-8 md-col-9 px2">
       <div>
-        <h2 class="h3">About <%= @user.username %></h2>
+        <h3 class="h3 profile_sub_heading">About <%= @user.username %></h3>
         <p><%= @user.biography %></p>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem unde eius voluptates, rerum commodi magnam voluptas deserunt atque provident consequuntur eligendi iure ducimus eaque nostrum, libero a accusamus! Eum, laboriosam!</p>
       </div>
       <div>
-        <h2 class="h3">Karma</h2>
+        <h3 class="h3 profile_sub_heading">Karma</h3>
         <p><%= @user.karma %></p>
       </div>
     </div>
   </div>
 
-
-
-
-</section>
-
 <section class="container ">
-  <h2 class="h2 center">Deeds</h2>
+  <h3 class="h3 center profile_sub_heading">Deeds</h>
 
   <% user = User.find_by(id: current_user.id) %>
   <% Order.all.each do |order| %>
     <% if order.user_id == user.id %>
       <% deed = Deed.find_by(id: order.deed_id) %>
-      <h3><%= link_to(deed.title, deed_path(deed)) %></h3>
-      <p><%= deed.description%></p>
+      <div class="md-col-3">
+        <div class="p2 bg-white border rounded">
+          <img src="http://d2v52k3cl9vedd.cloudfront.net/assets/images/placeholder-square.svg" class="mb2" />
+          <h1 class="h2 mt0"><%= link_to(deed.title, deed_path(deed)) %></h1>
+        </div>
+      </div>
     <% end %>
   <% end %>
 </section>

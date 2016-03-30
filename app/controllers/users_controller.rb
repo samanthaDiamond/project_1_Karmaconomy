@@ -65,7 +65,7 @@ class UsersController < ApplicationController
      @user = User.find(params[:id])
      redirect_to(root_url) unless @user == current_user
    end
-   
+
    def authorise
    redirect_to root_path unless (@current_user.present? && @current_user.admin?)
    end

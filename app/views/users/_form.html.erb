@@ -1,41 +1,43 @@
 <div class="container profile_form">
-  <form class="sm-col-3 m3">
+  <div class="sm-col-3 m3">
     <%= form_for(@user) do |f| %>
-    <% if @user.errors.any? %>
-      <%= pluralize(@user.errors.count, "error") %>
-    <% else %>
-      <ul>
-      <% @user.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
+      <% if @user.errors.any? %>
+        <div id="error_explanation">
+          <div class="alert alert-danger">
+            Invalid user information.
+          </div>
+          <ul>
+          <% @user.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+          <% end %>
+          </ul>
+        </div>
+      <% end %>
+      <%= f.label :image %>
+      <%= f.url_field :image, class: 'block col-12 mb1 field' %>
+
+      <%= f.label :name %>
+      <%= f.text_field :name, class: 'block col-12 mb1 field' %>
+
+      <%= f.label :username %>
+      <%= f.text_field :username, class: 'block col-12 mb1 field' %>
+
+      <%= f.label :biography %>
+      <%= f.text_field :biography, class: 'block col-12 mb1 field' %>
+
+      <%= f.label :postcode %>
+      <%= f.number_field :postcode, class: 'block col-12 mb1 field'%>
+
+      <%= f.label :email %>
+      <%= f.email_field :email, class: 'block col-12 mb1 field' %>
+
+      <%= f.label :password %>
+      <%= f.password_field :password, class: 'block col-12 mb1 field' %>
+
+      <%= f.label :password_confirmation, "Confirmation" %>
+      <%= f.password_field :password_confirmation, class: 'block col-12 mb1 field' %>
+
+      <%= f.submit "Submit", class: "btn btn-primary" %>
     <% end %>
-      </ul>
-    <% end %>
-
-    <%= f.label :image %>
-    <%= f.url_field :image, class: 'block col-12 mb1 field' %>
-
-    <%= f.label :name %>
-    <%= f.text_field :name, class: 'block col-12 mb1 field' %>
-
-    <%= f.label :username %>
-    <%= f.text_field :username, class: 'block col-12 mb1 field' %>
-
-    <%= f.label :biography %>
-    <%= f.text_field :biography, class: 'block col-12 mb1 field' %>
-
-    <%= f.label :postcode %>
-    <%= f.number_field :postcode, class: 'block col-12 mb1 field'%>
-
-    <%= f.label :email %>
-    <%= f.email_field :email, class: 'block col-12 mb1 field' %>
-
-    <%= f.label :password %>
-    <%= f.password_field :password, class: 'block col-12 mb1 field' %>
-
-    <%= f.label :password_confirmation, "Confirmation" %>
-    <%= f.password_field :password_confirmation, class: 'block col-12 mb1 field' %>
-
-    <%= f.submit "Submit", class: "btn btn-primary" %>
-  <% end %>
-  </form>
+  </div>
 </div>
