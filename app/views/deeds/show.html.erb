@@ -5,7 +5,6 @@
     <div class="sm-col sm-col-4 md-col-3 sm-show">
       <ul class="list-reset">
         <li><%= image_tag(@deed.image, :class => 'feature') %></li>
-        <li class"h3 bold deed_sub_heading"><%= @deed.title %></li>
         <% order = Order.find_by(deed_id: @deed.id) %>
         <li>Postcode: <%= @deed.postcode %></li>
         <li>Date: <%= @deed.date %></li>
@@ -15,8 +14,8 @@
         <% if logged_in? %>
           <% if status == "Available" %>
             <% if deed_belongs_to_logged_in_user?(@deed) %>
-              <%= link_to 'Edit', edit_deed_path(@deed) %>
-              <%= link_to 'Delete', @deed, :method => :delete %>
+              <li class="edit_deed_link"><%= link_to 'Edit', edit_deed_path(@deed) %></li>
+              <li class="delete_deed_link"><%= link_to 'Delete', @deed, :method => :delete %></p></li>
             <% else %>
               <%= form_tag accept_deed_path do %>
                 <%= submit_tag "Accept!" %>
@@ -33,7 +32,8 @@
     </div>
     <div class="sm-col sm-col-8 md-col-9 px2">
       <div>
-        <h3 class="h3 deed_sub_heading">Details</h3>
+        <h3 class="h3 deed_sub_heading"><%= @deed.title %></h3>
+        <p><%= @deed.description %></p>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem unde eius voluptates, rerum commodi magnam voluptas deserunt atque provident consequuntur eligendi iure ducimus eaque nostrum, libero a accusamus! Eum, laboriosam!</p>
       </div>
       <div>

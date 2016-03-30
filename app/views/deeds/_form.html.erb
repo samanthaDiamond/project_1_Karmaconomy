@@ -1,7 +1,7 @@
 <div class="container">
   <div class="clearfix mxn2">
     <div class= "col-4 px2 mx-auto m3 bg-white profile_form">
-      <%= form_for(@deed) do |f| %>
+      <%= form_for(@deed, :html => {:multipart => true}) do |f| %>
         <%= f.label :title %>
         <%= f.text_field :title, class: 'block col-12 mb1 field' %>
 
@@ -14,15 +14,23 @@
         <%= f.label :date %>
         <%= f.text_field :date, class: 'block col-12 mb1 field' %>
 
-        <%= f.label :image %>
-        <%= f.url_field :image, class: 'block col-12 mb1 field' %>
-
         <%= f.label :karma %>
         <%= f.number_field :karma, class: 'block col-12 mb1 field' %>
 
         <%= f.label :deed_type %>
+
         <br />
+
         <%= f.select :deed_type, ['request', 'offer'], class: 'block col-12 mb1 field' %>
+
+        <br />
+        <br />
+
+        <%= f.label :image %>
+
+        <br />
+
+        <%= f.cl_image_upload :image, class: 'block col-12 mb1 field' %>
 
         <br />
         <br />

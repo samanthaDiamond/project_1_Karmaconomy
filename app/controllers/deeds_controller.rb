@@ -13,7 +13,13 @@ class DeedsController < ApplicationController
 
   def create
     deed = Deed.new deed_params
-    user = User.find_by(id: current_user.id)
+
+    if params[:file]
+      req = Cloudinary::Uploader.upload params[:file]
+      deed.image = req["url"]
+    end
+
+    user = User.find_by(id: @current_user.id)
     user_karma = user.karma
     deed_karma = deed.karma
     if user_karma >= deed_karma && deed.save

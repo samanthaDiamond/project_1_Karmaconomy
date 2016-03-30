@@ -39,7 +39,7 @@ p.sub_title {
 }
 
 div.about_content {
-  margin: 0 auto;
+  margin-top: -200px;
 }
 
 h2.how_it_works {
@@ -125,11 +125,11 @@ div.deed_content {
   font-weight: bold;
 }
 
-h3.deed_sub_heading {
-  font-family: 'Questrial', sans-serif;
-  font-size: 22px;
-  color: #374665;
-}
+// li.edit_deed_link>a li.delete_deed_link>a {
+//   text-decoration: none;
+//   color: #FF8A7C;
+//   font-weight: bold;
+// }
 
 div.profile_form>form.new_deed {
   font-family: 'Questrial', sans-serif;

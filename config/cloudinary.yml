@@ -1,0 +1,19 @@
+---
+development:
+  cloud_name: dyv7asihm
+  api_key: '593398263679426'
+  api_secret: "-qf00epjPwKKHi04xuwXqF49aeU"
+  enhance_image_tag: true
+  static_image_support: false
+production:
+  cloud_name: dyv7asihm
+  api_key: '593398263679426'
+  api_secret: "-qf00epjPwKKHi04xuwXqF49aeU"
+  enhance_image_tag: true
+  static_image_support: true
+test:
+  cloud_name: dyv7asihm
+  api_key: '593398263679426'
+  api_secret: "-qf00epjPwKKHi04xuwXqF49aeU"
+  enhance_image_tag: true
+  static_image_support: false
