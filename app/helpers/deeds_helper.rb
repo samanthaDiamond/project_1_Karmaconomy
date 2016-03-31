@@ -1,4 +1,5 @@
 module DeedsHelper
+
   def get_order_status(order)
     if order.accept_id == -1
       status = "Available"
@@ -13,4 +14,5 @@ module DeedsHelper
     order = Order.find_by(deed_id: deed.id)
     order.user_id == current_user.id
   end
+  
 end
