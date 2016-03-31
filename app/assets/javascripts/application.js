@@ -12,7 +12,6 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
 // require basscss/basscss
 // require basscss/basscss-addons
 // require hover

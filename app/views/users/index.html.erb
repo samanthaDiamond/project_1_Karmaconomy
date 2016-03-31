@@ -1,8 +1,8 @@
 <div class="h1 center user_title">KARMACONOMY</div>
 
-<h1 class="h1 all_users_h1">Karmaconomy Users</h1>
+<div class="h1 center all_users_h1">Karmaconomy Users</div>
 
-<div class="section m3">
+<div class="section m3 center all_users">
   <% User.all.each do |u| %>
     <li><%= u.name %></li>
   <% end %>

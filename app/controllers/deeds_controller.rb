@@ -37,12 +37,11 @@ class DeedsController < ApplicationController
   end
 
   def update
-    # check karma point available
     deed = Deed.find params[:id]
 
     if params[:file]
       req = Cloudinary::Uploader.upload params[:file]
-      deed.image = req["url"]
+    deed.image = req["url"]
     end
 
     user = User.find_by(id: current_user.id)

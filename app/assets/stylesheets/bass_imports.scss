@@ -3,6 +3,12 @@
 @import "font-awesome";
 @import url(https://fonts.googleapis.com/css?family=Architects+Daughter|Questrial|Poiret+One|Give+You+Glory|Caveat);
 
+img.feature {
+  border: 2px solid pink;
+  border-color: #FF8A7C;
+  border-width: 2px;
+}
+
 nav {
   background-color: #FF8A7C;
   font-family: 'Give You Glory', cursive;
@@ -69,7 +75,7 @@ div.user_title {
 
 li.profile_pic>img {
   width: 200px;
-  height: 195px;
+  height: 210px;
   border-radius: 50%;
   border-width: 2px;
   border-color: #FF8A7C;
@@ -88,7 +94,7 @@ h3.deed_heading {
   color: #374665;
   font-weight: bold;
   font-size: 28px;
-  margin: 40px 0px 100px 0px;
+  margin: 20px 0px 40px 0px;
 }
 
 h3.profile_sub_heading {
@@ -141,7 +147,7 @@ div.profile_form>form.new_deed {
   margin: 0 auto;
 }
 
-div.new_deed {
+div.new_deed, div.edit_deed, div.edit_profile_h1, div.all_users_h1 {
   margin-top: 30px;
   font-family: 'Questrial', sans-serif;
   color: #374665;
@@ -170,7 +176,25 @@ div.social_media>i {
   margin: 15px 9px 15px 9px;
 }
 
+.deed_box_title>a {
+  font-size: 10px;
+}
+
 img.feature {
-  border: #FF8A7C;
+  border: 2px solid pink;
+  border-radius: 50%;
+  border-color: #FF8A7C;
   border-width: 2px;
+}
+
+.deed_links>h1>a {
+  font-size: 30px;
+}
+
+div.all_users>li {
+  text-decoration: none;
+  color: #374665;
+  font-family: 'Questrial', sans-serif;
+  font-size: 20px;
+  list-style-type: none;
 }
