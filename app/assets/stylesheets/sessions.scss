@@ -1,3 +1,14 @@
 .btn {
   background-color: #FF8A7C;
 }
+
+li.edit_deed_link>a, li.delete_deed_link>a {
+  text-decoration: none;
+  color: #FF8A7C;
+  font-weight: bold;
+}
+
+img.feature {
+  border: #FF8A7C;
+  border-width: 2px;
+}

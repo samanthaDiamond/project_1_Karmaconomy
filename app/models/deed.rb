@@ -26,8 +26,6 @@ class Deed < ActiveRecord::Base
 
   validates :date, length: { maximum: 100 }
 
-  # validates :image
-
   validates :deed_type, presence: true
 
   validates :karma, presence: true

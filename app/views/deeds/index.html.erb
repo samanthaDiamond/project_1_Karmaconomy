@@ -2,13 +2,13 @@
 
 <section class="container clearfix">
   <div class="">
-    <h3 class="h3 center deed_heading">YOUR DEEDS</h>
+    <h3 class="h3 center bold deed_heading">ALL DEEDS</h>
   </div>
   <% @deeds.each do |deed| %>
   <div class="col md-col-3">
       <div class="p2 bg-white border rounded deed_links">
-        <img src="http://d2v52k3cl9vedd.cloudfront.net/assets/images/placeholder-square.svg" class="mb2" />
-        <h1 class="h2 mt0 center"><%= link_to(deed.title, deed_path(deed)) %></h1>
+        <%= cl_image_tag(deed.image, :width => 200, :height => 200, :crop => :fill, :class => 'feature mb2') %>
+        <h1 class="h2 mt0 center deed_link_box"><%= link_to(deed.title, deed_path(deed)) %></h1>
       </div>
   </div>
   <% end %>

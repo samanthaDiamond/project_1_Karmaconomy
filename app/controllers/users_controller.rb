@@ -17,6 +17,12 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
+
+    # if params[:file]
+    #   req = Cloudinary::Uploader.upload params[:file]
+    #   user.image = req["url"]
+    # end
+
     @user.karma = 10
     if @user.save
       log_in @user
@@ -33,6 +39,12 @@ class UsersController < ApplicationController
 
   def update
      @user = User.find(params[:id])
+
+     if params[:file]
+       req = Cloudinary::Uploader.upload params[:file]
+       user.image = req["url"]
+     end
+
      if @user.update_attributes(user_params)
        flash.now[:success] = "Profile updated"
        redirect_to @user

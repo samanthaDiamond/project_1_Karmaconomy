@@ -4,7 +4,7 @@
   <div class="clearfix mxn2 deed_content">
     <div class="sm-col sm-col-4 md-col-3 sm-show">
       <ul class="list-reset">
-        <li><%= image_tag(@deed.image, :class => 'feature') %></li>
+        <li><%= cl_image_tag(@deed.image, :width => 200, :height => 200, :crop => :fill, :class => 'feature') %></li>
         <% order = Order.find_by(deed_id: @deed.id) %>
         <li>Postcode: <%= @deed.postcode %></li>
         <li>Date: <%= @deed.date %></li>
@@ -37,8 +37,10 @@
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem unde eius voluptates, rerum commodi magnam voluptas deserunt atque provident consequuntur eligendi iure ducimus eaque nostrum, libero a accusamus! Eum, laboriosam!</p>
       </div>
       <div>
-        <h3 class="h3 deed_sub_heading">Karma</h>
-        <p><%= @deed.karma %></p>
+        <h3 class="h3 deed_sub_heading">Karma: <%= @deed.karma %></h3>
+          <% (1..@deed.karma).each do %>
+            <%= image_tag "karma_icon.png" %>
+          <% end  %>
       </div>
     </div>
   </div>
