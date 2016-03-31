@@ -58,6 +58,7 @@ p.main_content {
   font-family: 'Give You Glory', cursive;
   color: #374665;
   font-size: 25px;
+  text-align: justify;
 }
 
 .social_container>i {
@@ -141,6 +142,10 @@ div.deed_content {
   font-weight: bold;
 }
 
+div.deed_box {
+  margin-bottom: 10px;
+}
+
 div.profile_form>form.new_deed {
   font-family: 'Questrial', sans-serif;
   align-items: center;
@@ -180,7 +185,7 @@ div.social_media>i {
   font-size: 10px;
 }
 
-img.feature {
+.deed_links>img.feature {
   border: 2px solid pink;
   border-radius: 50%;
   border-color: #FF8A7C;
@@ -197,4 +202,49 @@ div.all_users>li {
   font-family: 'Questrial', sans-serif;
   font-size: 20px;
   list-style-type: none;
+}
+
+div.deed_image_container {
+  position: relatve;
+}
+
+div.welcome_deed {
+  display: inline
+}
+
+.welcome_deed>div.box {
+  height: 200px;
+  width: 100%;
+  background-size: cover;
+}
+
+.boxes {
+  margin-top: 80px;
+}
+
+.tiles {
+  width: 250px;
+  height: 250px;
+  display: table-cell;
+  vertical-align:middle;
+  text-align:center;
+  font-family: 'Questrial', sans-serif;
+  color: #FFFFFF;
+  font-size: 30px;
+  text-decoration: none;
+}
+
+.bgimg {
+  height: 250px;
+  margin: 10px;
+  border: 2px solid pink;
+  border-color: #FF8A7C;
+  border-width: 3px;
+  background-size: cover;
+  opacity: 0.9;
+  text-decoration: none;
+}
+
+.bgimg:hover {
+  opacity: 1;
 }

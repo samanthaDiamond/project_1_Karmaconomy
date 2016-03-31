@@ -35,9 +35,10 @@
 
   <% flash.each do |message_type, message| %>
     <div class="alert alert-<%= message_type %>"><%= message %></div>
-    <% end %>
-
-<%= yield %>
+  <% end %>
+  <div class="container">
+    <%= yield %>
+  </div>
 
   <footer class="white bg-cover footer_section">
     <div class="px2 py3 container center bg-cover">
