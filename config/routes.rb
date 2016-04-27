@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
   root 'welcome#index'
-  resources :users, :deeds, :orders
+  resources :users, :deeds, :orders, :categories
 
   get 'signup' => 'users#new'
   get    'login'   => 'sessions#new'

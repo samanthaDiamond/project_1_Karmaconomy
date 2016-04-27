@@ -1,11 +1,17 @@
 class DeedsController < ApplicationController
   def index
     @deeds = Deed.all
+    @categories = Category.all
   end
 
   def new
     if logged_in?
       @deed = Deed.new
+      @categories = Category.all
+      @categories_list = []
+      @categories.each do |c|
+        @categories_list.push(c.title)
+      end
     else
       redirect_to :controller => 'sessions', :action => 'new'
     end
@@ -101,6 +107,6 @@ class DeedsController < ApplicationController
 
   private
   def deed_params
-    params.require(:deed).permit(:title, :description, :postcode, :date, :image, :karma, :deed_type)
+    params.require(:deed).permit(:title, :description, :postcode, :date, :image, :karma, :category_id)
   end
 end
