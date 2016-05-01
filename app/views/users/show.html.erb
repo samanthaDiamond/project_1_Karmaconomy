@@ -4,7 +4,12 @@
   <div class="clearfix mxn2 profile_content">
     <div class="sm-col sm-col-4 md-col-3 sm-show profile_content">
       <ul class="list-reset">
-        <li class="profile_pic"><%= image_tag(@user.image, :class => 'feature') %></li>
+        <li class="profile_pic">
+          <% if @user.image == nil %>
+            <%= image_tag "admin_pic.jpg" %>
+          <% else %>
+            <%= image_tag(@user.image, :class => 'feature') %></li>
+          <% end  %>
         <li><%= @user.name %></li>
         <li>Postcode: <%= @user.postcode %></li>
         <li><%= @user.email %></li>

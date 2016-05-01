@@ -18,7 +18,7 @@ class Deed < ActiveRecord::Base
   has_one :order
   has_one :user, through: :order
 
-  validates :title, presence: true, length: { maximum: 50 }
+  validates :title, presence: true, length: { maximum: 17 }
 
   validates :postcode, presence: true, length: { is: 4 }
 

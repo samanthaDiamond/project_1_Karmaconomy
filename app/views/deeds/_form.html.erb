@@ -2,6 +2,18 @@
   <div class="clearfix mxn2">
     <div class= "col-4 px2 mx-auto m3 bg-white profile_form">
       <%= form_for(@deed, :html => {:multipart => true}) do |f| %>
+        <% if @deed.errors.any? %>
+          <div id="error_explanation">
+            <div class="alert alert-danger">
+              Invalid deed information.
+            </div>
+            <ul>
+            <% @deed.errors.full_messages.each do |msg| %>
+              <li><%= msg %></li>
+            <% end %>
+            </ul>
+          </div>
+        <% end %>
         <%= f.label :title %>
         <%= f.text_field :title, class: 'block col-12 mb1 field' %>
 

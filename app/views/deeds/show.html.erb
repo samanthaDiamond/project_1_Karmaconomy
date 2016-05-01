@@ -2,12 +2,15 @@
 <section class="container deed_profile px1 py3">
   <div class="clearfix mxn2 deed_content">
     <div class="sm-col sm-col-4 md-col-3 sm-show">
-      <ul class="list-reset">
-        <li><%= cl_image_tag(@deed.image, :width => 200, :height => 200, :crop => :fill, :class => 'feature') %></li>
+      <ul class="list-reset deed_info">
+        <% if @deed.image == nil %>
+          <li class="deed_pic"><%= image_tag "admin_pic.jpg" %></li>
+        <% else %>
+          <li><%= cl_image_tag(@deed.image, :width => 200, :height => 200, :crop => :fill, :class => 'feature deed_pic') %></li>
+        <% end  %>
         <% order = Order.find_by(deed_id: @deed.id) %>
         <li>Postcode: <%= @deed.postcode %></li>
         <li>Date: <%= @deed.date %></li>
-        <li>Deed type: <%= @deed.deed_type %></li>
         <% status = get_order_status(order) %>
         Status: <%= status %>
         <% if logged_in? %>
@@ -30,16 +33,13 @@
       </ul>
     </div>
     <div class="sm-col sm-col-8 md-col-9 px2">
-      <div>
-        <h3 class="h3 deed_sub_heading"><%= @deed.title %></h3>
+      <div class="deed_description">
+        <h3 class="deed_sub_heading"><%= @deed.title %></h3>
         <p><%= @deed.description %></p>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem unde eius voluptates, rerum commodi magnam voluptas deserunt atque provident consequuntur eligendi iure ducimus eaque nostrum, libero a accusamus! Eum, laboriosam!</p>
       </div>
       <div>
         <h3 class="h3 deed_sub_heading">Karma: <%= @deed.karma %></h3>
-        <% (1..@deed.karma).each do %>
-          <%= image_tag "karma_icon.png" %>
-        <% end  %>
       </div>
     </div>
   </div>

@@ -18,20 +18,20 @@ class DeedsController < ApplicationController
   end
 
   def create
-    deed = Deed.new deed_params
+    @deed = Deed.new deed_params
 
     if params[:file]
       req = Cloudinary::Uploader.upload params[:file]
-      deed.image = req["url"]
+      @deed.image = req["url"]
     end
 
     user = User.find_by(id: @current_user.id)
     user_karma = user.karma
-    deed_karma = deed.karma
-    if user_karma >= deed_karma && deed.save
-      Order.create(deed_id: deed.id, user_id: current_user.id, karma: deed_karma, accept_id: -1, complete: false)
+    deed_karma = @deed.karma
+    if @deed.save && user_karma >= deed_karma
+      Order.create(deed_id: @deed.id, user_id: current_user.id, karma: deed_karma, accept_id: -1, complete: false)
       user.update_attribute(:karma, user_karma - deed_karma)
-      redirect_to deed
+      redirect_to @deed
     else
       flash.now[:danger] = 'Invalid karma available and/or deed details'
       redirect_to new_deed_path
@@ -40,6 +40,7 @@ class DeedsController < ApplicationController
 
   def edit
     @deed = Deed.find params[:id]
+    @categories = Category.all
   end
 
   def update

@@ -11,13 +11,13 @@
 
   <header class="white bg-gray bg-cover bg-center">
     <nav class="clearfix white">
-      <div class="sm-col nav_options">
-        <%= link_to "Home", root_path, :class => "btn py2" %>
-        </div>
+      <div class="sm-col nav_options"></div>
         <% if logged_in? %>
+          <%= link_to "Home", root_path, :class => "btn py2" %>
           <%= link_to "Profile", @current_user, :class => "btn py2" %>
           <%= link_to "Log out", logout_path, method: "delete", :class => "btn py2" %>
         <% else %>
+          <%= link_to "Home", root_path, :class => "btn py2" %>
           <%= link_to "Login", login_path, :class => "btn py2" %>
         <% end %>
       </div>
@@ -26,8 +26,8 @@
           Deed &#9662;
         </button>
       <div data-details class="absolute left-0 nowrap white bg-white rounded">
-          <%= link_to "All deeds", deeds_path, :class => "btn block" %>
-          <%= link_to "New deed", new_deed_path, :class => "btn block" %>
+          <%= link_to "All deeds", deeds_path, :class => "btn block deed_dropdown_options" %>
+          <%= link_to "New deed", new_deed_path, :class => "btn block deed_dropdown_options" %>
       </div>
     </nav>
   </header>

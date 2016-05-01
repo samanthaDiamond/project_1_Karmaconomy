@@ -24,14 +24,14 @@
         <div class="col col-4" >
           <div class="bgimg" style="background-image: url(<%= image_path 'tools_fix_it.jpg' %>);">
             <h2 class="tiles">
-              Fix it
+              <%= link_to 'Fix it', category_path(@categories[0]), :class => "tiles" %>
             </h2>
           </div>
         </div>
         <div class="col col-4" >
           <div class="bgimg" style="background-image: url(<%= image_path 'camera_borrow_it.jpg' %>);">
             <h2 class="tiles">
-              Borrow it
+              <%= link_to 'Borrow it', category_path(@categories[1]), :class => "tiles" %>
             </h2>
           </div>
         </div>
@@ -40,21 +40,21 @@
         <div class="col col-4" >
           <div class="bgimg" style="background-image: url(<%= image_path 'pool_use_it.jpg' %>);">
             <h2 class="tiles">
-              Use it
+              <%= link_to 'Use it', category_path(@categories[3]), :class => "tiles" %>
             </h2>
           </div>
         </div>
         <div class="col col-4" >
           <div class="bgimg" style="background-image: url(<%= image_path 'walk_dog_do_it.jpg' %>);">
             <h2 class="tiles">
-              Do it
+              <%= link_to 'Do it', category_path(@categories[4]), :class => "tiles" %>
             </h2>
           </div>
         </div>
         <div class="col col-4" >
           <div class="bgimg" style="background-image: url(<%= image_path 'furniture_have_it.jpg' %>);">
             <h2 class="tiles">
-              Have it
+              <%= link_to 'Have it', category_path(@categories[2]), :class => "tiles" %>
             </h2>
           </div>
         </div>
