@@ -8,6 +8,14 @@ Karmaconomy is about sharing goods and helping others through Karma 'transaction
 
 When you sign up to Karmaconomy you will automatically receive 10 karma to get started. You can acquire and give karma through deeds. To earn karma, find a deed that you would like to perform in the deeds list and click 'accept'. Once the deed is completed the karma will be transferred to you. If you would like to create a deed, click 'new deed' in the navigation bar and complete the form. It is up to you to decide the karma value of the deed. You must inform Karmaconomy when the deed is completed.
 
+### Usage
+1. Clone repo from https://github.com/samanthaDiamond/project_1_Karmaconomy.git
+2. Run `bundle` to install Gems
+3. Run `rake db:migrate` and `rake db:seed` to populate database
+4. Run `rails server` and navigate to `localhost:3000`
+
+Alternatively, visit https://karmaconomy.herokuapp.com/
+
 ## Gems
 1. BCrypt
 2. Cloudinary
