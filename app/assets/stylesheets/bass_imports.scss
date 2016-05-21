@@ -4,6 +4,7 @@
 @import url(https://fonts.googleapis.com/css?family=Architects+Daughter|Questrial|Give+You+Glory);
 
 img.feature {
+  border-radius: 100%;
   border: 2px solid pink;
   border-color: #FF8A7C;
   border-width: 2px;
@@ -67,6 +68,7 @@ p.main_content {
   font-family: 'Questrial', sans-serif;
   color: #374665;
   font-size: 20px;
+  letter-spacing: 1.0px;
 }
 
 .social_container>i {
@@ -90,7 +92,6 @@ li.profile_pic>img {
 }
 
 .profile_content {
-  // font-family: 'Give You Glory', cursive;
   font-family: 'Questrial', sans-serif;
   color: #374665;
   font-size: 20px;

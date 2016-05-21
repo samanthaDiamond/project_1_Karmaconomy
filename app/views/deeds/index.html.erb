@@ -20,9 +20,8 @@
         <% if deed.image == nil %>
           <%= image_tag "admin_pic.jpg"%>
         <% else %>
-          <%= cl_image_tag(deed.image, :width => 200, :height => 200, :crop => :fill, :class => 'feature mb2 deed_pic') %>
+          <%= cl_image_tag(deed.image, :width => 200, :height => 200, :crop => :fill, :class => 'feature deed_pic') %>
         <% end  %>
-        <!-- <%= cl_image_tag(deed.image, :width => 200, :height => 200, :crop => :fill, :class => 'feature mb2') %> -->
         <h1 class="h2 mt0 center deed_link_box"><%= link_to(deed.title, deed_path(deed)) %></h1>
       </div>
   </div>
